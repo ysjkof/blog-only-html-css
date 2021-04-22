@@ -16,6 +16,9 @@ body {
 }
 
 /* small element */
+a {
+  text-decoration: none;
+}
 
 img {
   width: 100%;
