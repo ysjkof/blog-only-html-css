@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+
+    <title>물리치료사는 코딩 중</title>
+  </head>
+  <body>
+    <header class="header">
+      <span class="title header__site-title">물리치료사는 코딩 중</span>
+    </header>
+    <nav class="nav">
+      <ul>
+        <li>근길이 장력 곡선</li>
+        <li>list2</li>
+      </ul>
+    </nav>
+    <main class="main">
+      <article class="article">
+        <div class="paragraph">
+          <h1 class="title">1; 근육 길이-장력 관계</h1>
+          <blockquote>
+            <span>근육의 길이가 중간 = 근육이 힘이 가장 강하다.</span><br />
+            <span>근육의 길이가 끝범위 = 근육이 힘이 가장 약하다.</span>
+          </blockquote>
+          <p>
+            근육은 중간범위에 있을 때 힘이 강하고, 끝범위에 있을 때 약합니다.
+            예를들어, 팔꿈치를 최대한 폈을 때 팔근육의 길이가 5, 최대한 접었을
+            때가 1이라고 했을 때 근육의 힘은 길이가 3일 때 가장 강하고 1과 5에서
+            가장 약합니다. 이걸 <strong>능동적인 길이-장력 관계</strong>라
+            합니다.
+          </p>
+          <blockquote>
+            근육길이-장력 관계 = &quot;능동적인 길이-장력 관계&quot; +
+            &quot;수동적인 길이-장력 관계&quot;
+          </blockquote>
+          <p>
+            그치만 실제로는 3일때나 4일때나 큰 힘의 차이를 못 느낍니다. 왜냐면
+            3을 지나면서 힘줄, 근막 등의 구조물이 길어지고 장력이 생기기
+            때문입니다. 이걸 <strong>수동적인 길이-장력 관계</strong>라 하고,
+            능동적인 길이-장력 관계와 수동적인 길이-장력 관계를 합쳐서
+            <strong>근육길이-장력 관계</strong>라고 합니다.
+          </p>
+          <img
+            src="./src/length-tension-curve.png"
+            alt="length-tension-curve"
+          />
+          <ul>
+            <li>
+              근육길이-장력 관계를 표현한 <strong>근육길이-장력 곡선</strong>
+            </li>
+          </ul>
+        </div>
+
+        <div class="paragraph">
+          <h2 class="title">1a1; 수동적인 길이-장력 관계</h2>
+          <pre>
+// 수축성 구조물과 비수축성 구조물로 나눌 수 있습니다.
+// 수축성 구조물은 근육인데 스스로 수축할 수 있는 구조물이고,
+// 비수축성 구조물은 인대, 힘줄, 근막 같은 스스로 수축할 수 없는 구조물입니다.
+
+해부학 {
+  구조물 : {
+    수축성 구조물: 근육,
+    비수축성 구조물: 힘줄, 근막, 인대 등
+  }</pre
+          >
+          <p>
+            노란 고무줄을 양 손가락으로 잡아 당기면 처음에는 아무런 느낌 없이
+            당겨집니다. 그러다 어느 순간부터 저항감이 생기고 더 늘리면 결국
+            끊어지죠.
+          </p>
+          <p>
+            우리 몸에서도 똑같은 일이 일어납니다. 대신 고무줄이 아니고 비수축성
+            구조물에서 일어납니다.
+          </p>
+          <p>
+            예를들어, 힘을 뺀 왼쪽 손가락을 오른손으로 펴서 천천히 뒤로 꺾으면
+            아무 느낌 없다가 어느순간 뻣뻣함이 느껴지고 마지막에는 &quot;아!
+            여기서 더 꺾으면 병원간다.&quot;는 생각이 들겁니다.
+            <strong>건강한 근육</strong>이라면 이 뻣뻣함은
+            <strong>비수축성 구조물에서 탄성력이 생기고 팽팽해졌기 때문</strong
+            >에 느끼게 됩니다. 이걸 수동적인 길이-장력관계라고 합니다.
+          </p>
+          <img
+            src="./src/passive-length-tension-curve.png"
+            alt="passive-length-tension-curve"
+          />
+          <ul>
+            <li>
+              수동적인 길이-장력 관계를 표현한
+              <strong>수동적인 길이-장력 곡선</strong>
+            </li>
+            <li><strong>느슨함</strong>이 아무 느낌이 없을 때까지.</li>
+            <li><strong>임계길이</strong>는 뻣뻣함이 느껴지는 순간.</li>
+            <li>임계길이를 지나면서 점진적으로 장력이 증가한다.</li>
+          </ul>
+        </div>
+
+        <div class="paragraph">
+          <h2 class="title">1a2; 능동적인 길이-장력 관계</h2>
+          <pre>
+// 수축성 구조물과 비수축성 구조물로 나눌 수 있습니다.
+// 수축성 구조물은 근육인데 스스로 수축할 수 있는 구조물이고,
+// 비수축성 구조물은 인대, 힘줄, 근막 같은 스스로 수축할 수 없는 구조물입니다.
+
+해부학 {
+  구조물 : {
+    수축성 구조물: 근육,
+    비수축성 구조물: 힘줄, 근막, 인대 등
+  }</pre
+          >
+          <p>
+            근육은 중간길이 일 때 힘이 가장 강하고 길어지거나 짧아질수록
+            약해집니다.
+          </p>
+          <pre>
+교차연결(crossbridge) = 액틴 + 미오신
+교차연결이 많다 = 근육의 힘이 강해진다.
+교차연결이 적다 = 근육의 힘이 약해진다.
+
+만약 (근육길이가 중간에서 가까울수록) {교차연결이 많다.}
+그외 (근육길이가 중간에서 멀수록) {교차연결이 적다.}</pre
+          >
+          <p>
+            이걸 이해하려면 근수축기전을 알아야 합니다. 근수축기전은 근육이
+            수축하는 원리를 설명하는 이론입니다. 근육 속에는 액틴과 미오신이라는
+            것이 많이 있고 액틴과 미오신이 서로 꽉 붙으면 힘이 발생하는데 이걸
+            교차연결(crossbridge)이라고 합니다. 교차연결이 많을수록 힘이
+            강해지고 교차연결은 중간범위일 때 가장 많고, 끝으로 갈수록
+            줄어듭니다.
+            <img
+              src="./src/active-length-tension-curve.png"
+              alt="active-length-tension-curve"
+            />
+          </p>
+          <ul>
+            <li>
+              능동적인 길이-장력 관계를 표현한
+              <strong>능동적인 길이-장력 곡선</strong>
+            </li>
+            <li>
+              A, D = 교차연결 수가 적은 위치.
+              <ul>
+                <li>
+                  A = e.x., 팔꿈치를 완전히 <strong>굽힌</strong> 상태의
+                  위팔두갈레근.
+                </li>
+                <li>
+                  D = e.x., 팔꿈치를 완전히 <strong>편</strong> 상태의
+                  위팔두갈레근.
+                </li>
+              </ul>
+            </li>
+            <li>
+              B, C = 교차연결의 수가 가장 많은 위치.
+              <ul>
+                <li>e.x., 팔꿈치 각도 약 90º의 위팔두갈레근.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="paragraph">
+          <h2 class="title">주의</h2>
+          <p>
+            쉽게 쓰기 위해서 팔꿈치 각도 90º를 교차연결의 수가 가장 많은
+            위치라고 했습니다. 하지만 이건 팔꿈치의 가동범위가 0º~180º일 때
+            얘기인데 실제로는 개인마다 이 범위가 다릅니다. 그래서 90º니까 무조건
+            힘이 가장 강하다고 하면 틀릴 수 있습니다.
+          </p>
+        </div>
+      </article>
+    </main>
+    <footer class="footer">
+      <div class="section">section 1</div>
+      <div class="section">section 2</div>
+    </footer>
+  </body>
+</html>
